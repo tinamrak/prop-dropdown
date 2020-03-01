@@ -29,9 +29,19 @@ li {
   display: inline-block;
   padding-top: 52px;
   position: relative;
+  transition: all .3s ease;
 }
 .menu > li:last-child {
   margin-right: -25px;
+}
+
+.menu > li:not(.menu-item--expanded).is-active {
+  color: #ffffff;
+  background-color: #9e1e63;
+  border-radius: 0 0 8px 8px;
+}
+.menu > li:not(.menu-item--expanded).is-active a {
+  color: #ffffff;
 }
 
 .menu > li > a {
@@ -52,8 +62,8 @@ li {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  border-radius: 0 0 8px 8px;
   background-color: #9e1e63;
+  border-radius: 0 0 8px 8px;
   transition: all .3s ease;
   opacity: 0;
   visibility: hidden;
@@ -71,11 +81,11 @@ li {
   font-weight: 500;
 }
 
-.menu > li.show-submenu > a {
+.menu > li.is-dropped > a {
   color: #ffffff;
   z-index: 4;
 }
-.menu > li.show-submenu ul {
+.menu > li.is-dropped ul {
   opacity: 1;
   visibility: visible;
   z-index: 3;

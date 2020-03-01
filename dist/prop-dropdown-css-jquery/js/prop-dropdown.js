@@ -1,29 +1,39 @@
  (function($) {
   'use strict';
 
-  // Menu first link.
-  var parentLinks = '.header .menu > .menu-item--expanded > a';
+  var $parentWithSubmenu = '.menu-item--expanded > a';
 
-  $(parentLinks).each(function() {
+  $($parentWithSubmenu).each(function() {
     var $this = $(this),
         parentWidth = $(this).width();
 
     // Set minimum width for submenu
     $this.parent().find('ul').css('min-width', parentWidth + 'px');
 
+    // Display submenu
     $this.on('click', function(ev) {
       ev.preventDefault();
-      
-      // Display submenu
-      $this.parent().toggleClass('show-submenu');
-      $(parentLinks).not($this).parent().removeClass('show-submenu');
+      $this.parent().toggleClass('is-dropped');
+      $($parentWithSubmenu).not($this).parent().removeClass('is-dropped');
     });
   });
 
-  // Hide dropdown when clicking outside of it.
+  // Set active state to items that don't have submenu
+  var $parentWithoutSubmenu = $('li:not(.menu-item--expanded) > a');
+  $parentWithoutSubmenu.on('click', function(ev) {
+    var $this = $(this);
+    ev.preventDefault();
+    $this.parent().toggleClass('is-active');
+    $parentWithoutSubmenu.not($this).parent().removeClass('is-active');
+  });
+
+  // Disable active state when clicking outside of it
   $(document).on('click', function(e) {
-    if (!$(e.target).closest(parentLinks).length) {
-      $('.menu-item--expanded').removeClass('show-submenu');
+    if (!$(e.target).closest($parentWithSubmenu).length) {
+      $('.menu-item--expanded').removeClass('is-dropped');
+    }
+    if (!$(e.target).closest($parentWithoutSubmenu).length) {
+      $('li:not(.menu-item--expanded)').removeClass('is-active');
     }
   });
  
