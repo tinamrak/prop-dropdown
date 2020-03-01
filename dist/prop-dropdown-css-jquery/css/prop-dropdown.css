@@ -1,3 +1,11 @@
+/* 
+ * Transitions Only After Page Load
+ * https://css-tricks.com/transitions-only-after-page-load/
+*/
+.preload * {
+  transition: none !important;
+}
+
 /* Basic page layout */
 body {
   font-family: 'Roboto';

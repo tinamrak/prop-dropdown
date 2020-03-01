@@ -1,6 +1,11 @@
  (function($) {
   'use strict';
 
+  // Transitions Only After Page Load
+  // https://css-tricks.com/transitions-only-after-page-load/  
+  $('body').removeClass('preload');
+
+  // PROP Dropdown
   var $parentWithSubmenu = '.menu-item--expanded > a';
 
   $($parentWithSubmenu).each(function() {
