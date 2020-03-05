@@ -1,10 +1,8 @@
 # PROP Dropdown
 
-[Demo with CSS and jQuery](https://tinamrak.github.io/prop-dropdown/) (dropdown shows **on click**)
+[Demo](https://tinamrak.github.io/prop-dropdown/dist/prop-dropdown-css-only/index.html)
 
-[Demo with pure CSS](https://tinamrak.github.io/prop-dropdown/dist/prop-dropdown-css-only/index.html) (dropdown shows **on hover**)
-
-This is a part of a project by [Sergeant](https://www.sergeant.agency/).
+This is part of a project by [Sergeant](https://www.sergeant.agency/).
 
 ------------
 
