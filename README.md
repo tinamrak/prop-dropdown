@@ -2,7 +2,7 @@
 
 [Demo](https://tinamrak.github.io/prop-dropdown/)
 
-This is part of a project by [Sergeant](https://www.sergeant.agency/).
+This is part of a project at [Sergeant](https://www.sergeant.agency/).
 
 ------------
 
